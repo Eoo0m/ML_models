@@ -25,7 +25,7 @@
 ### 내부 구성
 	1.	Numerical Feature + BatchNorm
 	•	history 계열의 극단적 분포를 완화하기 위해
-일부 피처는 네제곱근 변환으로 안정화
+	• 일부 피처는 네제곱근 변환으로 안정화
 	2.	Categorical Embedding
 	•	각 카테고리 ID를 임베딩으로 변환해 dense feature로 통합
 	3.	Bi-LSTM 기반 시퀀스 인코더
