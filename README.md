@@ -44,10 +44,9 @@
 
 
 **Generator**
-
-> - 입력: 랜덤 벡터 z  
-> - 구조: Linear → BatchNorm → ReLU × 2  
-> - 출력: 이미지(28×28 = 784)
+		- 입력: 랜덤 벡터 z  
+		- 구조: Linear → BatchNorm → ReLU × 2  
+		- 출력: 이미지(28×28 = 784)
 
 **Discriminator**
 
