@@ -36,3 +36,18 @@
 	5.	MLP (BN + GELU + Dropout)
 	•	분포 폭등을 억제하기 위해 cross 이후 BN 적용
 	•	ReLU 대신 GELU로 미세 신호까지 부드럽게 반영
+
+
+# gan.py
+논문에 따라 G1번에, D를 k번 업데이트 가능하도록 구현
+모델 구조
+
+Generator
+	•	입력: 랜덤 벡터 z
+	•	구조: Linear → BatchNorm → ReLU × 2
+	•	출력: 이미지(28×28 = 784)
+
+Discriminator
+	•	입력: 784차원 이미지 벡터
+	•	구조: Linear → LeakyReLU × 2
+	•	출력: 진짜/가짜 확률
