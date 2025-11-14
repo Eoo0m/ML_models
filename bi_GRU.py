@@ -167,7 +167,7 @@ def train_mlm(model, loader, epochs, lr, device):
 # ================= seq32 인퍼런스 =================
 @torch.no_grad()
 def generate_seq32(model, tok2id, in_path, out_path, maxlen, device):
-    print(f"🧩 Embedding {in_path} → {out_path}")
+    print(f"Embedding {in_path} → {out_path}")
     model.eval().to(device)
 
     df = pl.read_parquet(in_path)
@@ -197,12 +197,12 @@ def generate_seq32(model, tok2id, in_path, out_path, maxlen, device):
 
     out_df = df.with_columns([pl.Series(k, v) for k, v in add_cols.items()])
     out_df.write_parquet(out_path)
-    print(f"✅ Saved {out_path}")
+    print(f"Saved {out_path}")
 
 
 # ================= 메인 =================
 def main():
-    print("📂 Loading dataset…")
+    print("Loading dataset…")
     df = pl.from_pandas(read_parquet(DATA_PATH))
     print("Rows:", len(df))
 
@@ -245,7 +245,7 @@ def main():
         },
         save_path,
     )
-    print("💾 Saved:", save_path)
+    print("Saved:", save_path)
 
     # seq32 생성
     generate_seq32(
