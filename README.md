@@ -1,4 +1,6 @@
-# lgbm.py
+
+# ctr_prediction 
+## lgbm.py
  ### 주요 특징
 	•	1:1 언더샘플링으로 불균형 완화
 	•	hour cyclic 변환(sin/cos) 적용
@@ -6,7 +8,7 @@
 	•	seq 정보를 반영하기 위해 BiGRU seq32 벡터 추가(seq있는 parquet 사용해야함)
 
 
-# bigru.py
+## bigru.py
 
 원본 데이터의 seq 컬럼(숫자 토큰 시퀀스)을
 32차원 의미 벡터(seq32) 로 변환하는 전용 모델
@@ -18,7 +20,7 @@
 	•	마지막 hidden state를 평균 풀링 → 32차원 프로젝트 벡터
 
 
-# DeepCrossCTR.py
+## DeepCrossCTR.py
 
 복잡한 고차 교호작용과 시퀀스 정보의 활용을 목표로 설계한 딥러닝 모델.
 
@@ -37,8 +39,8 @@
 	•	분포 폭등을 억제하기 위해 cross 이후 BN 적용
 	•	ReLU 대신 GELU로 미세 신호까지 부드럽게 반영
 
-
-# gan.py
+# gan
+## gan.py
 논문에 따라 G 1번에, D를 k번 업데이트 가능하도록 구현
 ### 모델 구조
 
@@ -51,3 +53,6 @@
 	- 입력: 784차원 이미지 벡터
 	- 구조: Linear → LeakyReLU × 2
 	- 출력: 진짜/가짜 확률
+
+## training_metric.py
+d_loss, g_loss, D(G(z))를 그래프로 표현
